@@ -11,7 +11,7 @@ X_train = train.drop(["final_result"], axis = 1)
 y_test = test["final_result"].values
 X_test = test.drop(["final_result"], axis = 1)
 
-for i in ["linear", "poly", "rbf", "sigmoid"]:  # find best kernel --> linear for given data Set
+for i in ["linear", "poly", "rbf", "sigmoid"]:  # find best kernel --> linear, poly and rbf are about equal for given data Set
     model = SVC(kernel=i)
     model.fit(X_train, y_train)
     score = model.score(X_test,y_test)

@@ -1,4 +1,3 @@
-import model_SVC
 import data_download
 import dataset
 
