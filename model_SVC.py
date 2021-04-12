@@ -12,10 +12,10 @@ def run_SVC():
         model = SVC(kernel=i)
         model.fit(X_train, y_train)
         score = model.score(X_test,y_test)
-        # print(i, score)
+        print(i, score)
         if best_score < score:
             best_score = score
             best_i = i
     return best_i, best_score
 
-# kernel, score = best_kernel()
+kernel, score = run_SVC()

@@ -8,3 +8,6 @@ def run_random_forest():
     clf.fit(X_train,y_train)
     accuracy = clf.score(X_test,y_test)
     return accuracy
+
+accuracy = run_random_forest()
+print(accuracy)
