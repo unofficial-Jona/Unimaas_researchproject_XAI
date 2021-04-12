@@ -9,6 +9,7 @@ def run_random_forest():
     accuracy = clf.score(X_test,y_test)
     return accuracy
 
+<<<<<<< HEAD
 
 #Confusion Matrix - Use the whole data X, y without splitting into train, test...
 #from sklearn.model_selection import cross_val_predict
@@ -16,3 +17,7 @@ def run_random_forest():
 #Y_pred = cross_val_predict(model, X, y, cv=10)
 #print("and Confusion Matrix is")
 #print(confusion_matrix(y, Y_pred))
+=======
+accuracy = run_random_forest()
+print(accuracy)
+>>>>>>> 27a6d6892895d7c1a31e61d56e0ced370ff4208a

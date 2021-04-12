@@ -164,6 +164,6 @@ def preprocess_data(assessments, courses, studAss, studInfo, studVle, studRegis,
     # The final dataframe only has information relevant to the problem
 
     # final_df.describe()
-    # final_df.info()
+    final_df.info()
 
     return final_df
