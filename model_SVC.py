@@ -5,7 +5,7 @@ from sklearn.svm import SVC
 
 
 
-def best_kernel():
+def run_SVC():
     best_i = None
     best_score = 0
     for i in ["linear", "poly", "rbf", "sigmoid"]:  # find best kernel --> linear, poly and rbf are about equal for given data Set
