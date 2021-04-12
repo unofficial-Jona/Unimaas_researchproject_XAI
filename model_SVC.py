@@ -17,7 +17,7 @@ def run_SVC():
 
 # kernel, score = best_kernel()
 
-#Confusion Matrix - Use the whole data X, y without splitting into train, test
+#Confusion Matrix - Use the whole data X, y without splitting into train, test...
 #from sklearn.model_selection import cross_val_predict
 #from sklearn.metrics import confusion_matrix
 #Y_pred = cross_val_predict(model, X, y, cv=10)
