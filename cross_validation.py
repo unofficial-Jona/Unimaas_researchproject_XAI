@@ -22,3 +22,10 @@ print("Accuracy for", model, "->", (results_kfold.mean() * 100.0))
 Y_pred = cross_val_predict(model, X, y, cv=10)
 print("and Confusion Matrix is")
 print(confusion_matrix(y, Y_pred))
+
+#Due to the imbalance dataset, we decided to also look at the TPR(True positive rate/Recall) and TNR.
+tn, fp, fn, tp = confusion_matrix(y, Y_pred).ravel()
+#Model identifies x% of passed students and will miss y% of passed students.
+print("TPR for", model, "->", tp / (tp + fn))
+#Model identifies x% of failled students and will miss y% of failled students.
+print("TNR for", model, "->",  tn / (tn+fp))
