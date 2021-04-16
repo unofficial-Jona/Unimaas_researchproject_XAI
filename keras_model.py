@@ -24,5 +24,5 @@ model.add(Dense(1, activation="sigmoid"))
 
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
-model.fit(X, y, epochs=150, use_multiprocessing=True)
+model.fit(X, y, epochs=70, use_multiprocessing=True)
 print(model.summary())
