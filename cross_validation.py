@@ -25,7 +25,16 @@ print(confusion_matrix(y, Y_pred))
 
 #Due to the imbalance dataset, we decided to also look at the TPR(True positive rate/Recall) and TNR.
 tn, fp, fn, tp = confusion_matrix(y, Y_pred).ravel()
-#Model identifies x% of passed students and will miss y% of passed students.
+#Model identifies x% of passed students and will miss 1-x% of passed students.
 print("TPR for", model, "->", tp / (tp + fn))
-#Model identifies x% of failled students and will miss y% of failled students.
+#Model identifies x% of failled students and will miss 1-x% of failled students.
 print("TNR for", model, "->",  tn / (tn+fp))
+
+#Kappa statistic - reference: https://stats.stackexchange.com/questions/82162/cohens-kappa-in-plain-english
+observed_accuracy = (tn+tp)/(tn+tp+fp+fn)
+expected_accuracy = (((tn+fn)*(tn+fp))/(tn+tp+fp+fn)+ ((fp+tp)*(fn+tp))/(tn+tp+fp+fn))/(tn+tp+fp+fn)
+kappa_value= (observed_accuracy - expected_accuracy)/(1 - expected_accuracy)
+print("Kappa value for", model, "->",  kappa_value)
+
+#https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3900052/ for interpretation of kappa value.
+#0.76 of kappa value means moderate level of agreement in the data - Data is moderately reliable.
