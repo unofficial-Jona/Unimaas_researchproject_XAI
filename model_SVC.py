@@ -1,6 +1,8 @@
 from data_split import X_test, X_train, y_train, y_test
 from sklearn.svm import SVC
 
+model = SVC(kernel='linear', probability=True)
+model.fit(X_train, y_train)
 
 def run_SVC():
     best_i = None
@@ -9,7 +11,7 @@ def run_SVC():
         model = SVC(kernel=i)
         model.fit(X_train, y_train)
         score = model.score(X_test,y_test)
-        print(i, score)
+        # print(i, score)
 
         if best_score < score:
             best_score = score
@@ -27,4 +29,3 @@ def run_SVC():
 #print(confusion_matrix(y, Y_pred))
 
 kernel, score = run_SVC()
-
