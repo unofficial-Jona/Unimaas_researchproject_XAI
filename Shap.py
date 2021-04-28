@@ -2,7 +2,7 @@ from data_split import X_test, X_train, y_train, y_test
 from model_random_forest import clf as model_rand_for
 from model_SVC import model as model_SVC
 import matplotlib.pyplot as plt
-from model_keras import model as model_keras
+# from model_keras import model as model_keras
 import numpy as np
 import shap
 
