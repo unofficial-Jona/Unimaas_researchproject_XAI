@@ -8,12 +8,14 @@ X_train, X_test, y_train, y_test = prep.transform(df)
 
 model = MLPClassifier(random_state=1, max_iter=200)
 model.fit(X_train,y_train)
-accuracy = model.score(X_test,y_test)
 
 
 def compute_cv_score_MLP():
     cv_score = cross_val_score(model, X_train, y_train, cv=10)
     return cv_score
 
+def compute_accuracy():
+    accuracy = model.score(X_test, y_test)
+    return accuracy
 
 print(compute_cv_score_MLP())
