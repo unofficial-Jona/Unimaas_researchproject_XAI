@@ -21,13 +21,14 @@ def run_lime_sklearn(classifier):
     exp = explainer.explain_instance(
         data_row=X_test.iloc[1],
         predict_fn=classifier.predict_proba
-
     )
-    exp.as_html()
+
+    plt.close()
     exp.as_pyplot_figure()
     plt.tight_layout()
     plt.show()
 
+
 # run_lime_sklearn(model_rand_for)
 # run_lime_sklearn(model_SVC)
-run_lime_sklearn(model_MLP)
+# run_lime_sklearn(model_MLP)
