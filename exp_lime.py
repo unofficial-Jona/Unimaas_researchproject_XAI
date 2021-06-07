@@ -4,8 +4,6 @@ from data_split import X_test, X_train, y_train, y_test
 import matplotlib.pyplot as plt
 from model_random_forest import clf as model_rand_for
 from model_SVC import model as model_SVC
-# from model_keras import model as model_keras
-# from model_keras import X_train_ker, X_test_ker, y_test_ker, y_train_ker
 from model_MLP import model as model_MLP
 import numpy as np
 
@@ -29,6 +27,6 @@ def run_lime_sklearn(classifier):
     plt.show()
 
 
-# run_lime_sklearn(model_rand_for)
-# run_lime_sklearn(model_SVC)
-# run_lime_sklearn(model_MLP)
+run_lime_sklearn(model_rand_for)
+run_lime_sklearn(model_SVC)
+run_lime_sklearn(model_MLP)

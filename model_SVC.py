@@ -7,7 +7,7 @@ model.fit(X_train, y_train)
 def run_SVC():
     best_i = None
     best_score = 0
-    for i in ["linear", "poly", "rbf", "sigmoid"]:  # find best kernel --> linear, poly and rbf are about equal.
+    for i in ["linear", "poly", "rbf", "sigmoi d"]:  # find best kernel --> linear, poly and rbf are about equal.
         model = SVC(kernel=i)
         model.fit(X_train, y_train)
         score = model.score(X_test,y_test)
@@ -28,4 +28,3 @@ def run_SVC():
 #print("and Confusion Matrix is")
 #print(confusion_matrix(y, Y_pred))
 
-kernel, score = run_SVC()

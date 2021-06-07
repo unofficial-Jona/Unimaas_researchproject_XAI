@@ -7,6 +7,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 def update_df():
     df = dataset.load_data()
+    df = df.drop("exam_score", axis=1)
     df.to_csv("initialized_dataset", index=False)
 
 # update_df()
